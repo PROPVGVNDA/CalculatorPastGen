@@ -59,11 +59,11 @@
         public abstract long ParseFromString(string str);
 
         /// <summary>
-        /// Parses a string representation of a number to a custom base.
+        /// Parses a string representation of a number with a custom base to a base of a class.
         /// </summary>
         /// <param name="str">The string representation of the number.</param>
-        /// <param name="numberBase">The custom number base.</param>
-        /// <returns>The parsed number as a string in the specified base.</returns>
+        /// <param name="numberBase">The number base of a provided number.</param>
+        /// <returns>The parsed number as a string with a class base.</returns>
         public abstract string ParseToStringFromStr(string str, ushort numberBase);
     }
 }
