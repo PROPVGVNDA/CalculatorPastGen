@@ -1,24 +1,44 @@
 ﻿namespace CalculatorPastGen
 {
+    /// <summary>
+    /// Represents a decimal calculator.
+    /// </summary>
     public class Decimal : Calculator
     {
+        /// <summary>
+        /// Initializes a new instance of the Decimal class.
+        /// </summary>
         public Decimal()
         {
-            tag = "dec";
-            numberBase = 10;
+            Tag = "dec";
+            Base = 10;
         }
 
-        public override Int64 ParseFromString(string str)
+        /// <summary>
+        /// Parses a string representation to a long decimal number.
+        /// </summary>
+        /// <param name="str">The string representation of the number.</param>
+        /// <returns>The parsed decimal number.</returns>
+        public override long ParseFromString(string str)
         {
-            return Int64.Parse(str);
+            return long.Parse(str);
         }
 
+        /// <summary>
+        /// Parses a string representation to a decimal string in the specified number base.
+        /// </summary>
+        /// <param name="str">The string representation of the number.</param>
+        /// <param name="numberBase">The custom number base.</param>
+        /// <returns>The parsed number as a decimal string.</returns>
         public override string ParseToStringFromStr(string str, ushort numberBase)
         {
             bool containsMinus = str[0] == '-';
-            if (containsMinus) { str = str[1..]; }
+            if (containsMinus)
+            {
+                str = str[1..];
+            }
             str = str.Replace(" ", "");
-            Int64 decimalNumber;
+            long decimalNumber;
             try
             {
                 decimalNumber = Convert.ToInt64(str, numberBase);
